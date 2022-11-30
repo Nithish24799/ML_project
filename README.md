@@ -1,2 +1,2 @@
 # ML_project
-begineer project
+Machine learning project and NLP project 
