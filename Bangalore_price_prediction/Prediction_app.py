@@ -1,25 +1,25 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[24]:
+# In[1]:
 
 
 import streamlit as st
 import pandas as pd
-import joblib
 import numpy as np
 import warnings
 warnings.simplefilter("ignore")
 
 
-# In[25]:
+# In[7]:
 
 
-X=pd.read_pickle("X.pkl")
-model=joblib.load("model.sav")
+import pickle
+X=pickle.load(open("x.pkl","rb"))
+model=pickle.load(open("model.pkl","rb"))
 
 
-# In[26]:
+# In[3]:
 
 
 def price_predict(location,sqft,bath,BHK):
@@ -33,7 +33,7 @@ def price_predict(location,sqft,bath,BHK):
     return round((model.predict([x])[0]*100000),0)
 
 
-# In[12]:
+# In[4]:
 
 
 st.title("Bangalore house price prediction")
